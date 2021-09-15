@@ -1,0 +1,39 @@
+
+sh ovs-ofctl add-flow s1 priority=100,dl_type=0x88cc,actions=CONTROLLER:65535 --protocols=OpenFlow13
+sh ovs-ofctl add-flow s1 actions=NORMAL --protocols=OpenFlow13
+sh ovs-ofctl add-flow s2 priority=100,dl_type=0x88cc,actions=CONTROLLER:65535 --protocols=OpenFlow13
+sh ovs-ofctl add-flow s2 actions=NORMAL --protocols=OpenFlow13
+
+sh ovs-ofctl add-flow s3 priority=100,dl_type=0x88cc,actions=CONTROLLER:65535 --protocols=OpenFlow13
+sh ovs-ofctl add-flow s3 actions=NORMAL --protocols=OpenFlow13
+sh ovs-ofctl add-flow s4 priority=100,dl_type=0x88cc,actions=CONTROLLER:65535 --protocols=OpenFlow13
+sh ovs-ofctl add-flow s4 actions=NORMAL --protocols=OpenFlow13
+
+
+
+
+=======================
+
+
+
+sh ovs-ofctl dump-flows s1 --protocols=OpenFlow13
+sh ovs-ofctl dump-flows s2 --protocols=OpenFlow13
+sh ovs-ofctl dump-flows s3 --protocols=OpenFlow13
+sh ovs-ofctl dump-flows s4 --protocols=OpenFlow13
+
+=======================================================
+
+sh ovs-ofctl del-flows s1 --protocols=OpenFlow13
+sh ovs-ofctl del-flows s2 --protocols=OpenFlow13
+sh ovs-ofctl del-flows s3 --protocols=OpenFlow13
+sh ovs-ofctl del-flows s4 --protocols=OpenFlow13
+
+
+======================================================
+
+
+sh ovs-ofctl add-flow s2 dl_src=6a:e0:31:70:5d:47,dl_dst=c6:9c:f7:41:5b:64,actions=drop --protocols=OpenFlow13
+sh ovs-ofctl add-flow s2 dl_src=6a:e0:31:70:5d:47,dl_dst=22:3f:63:98:a2:f9,actions=drop --protocols=OpenFlow13
+sh ovs-ofctl add-flow s2 dl_src=6a:e0:31:70:5d:47,dl_dst=fa:f8:f1:1f:4f:c1,actions=drop --protocols=OpenFlow13
+
+
